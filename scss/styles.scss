@@ -1,0 +1,11 @@
+@import 'partials/normalize';
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/bases';
+@import 'partials/variables';
+@media only screen and (min-width: $bp-tablet) {
+  @import "partials/tablet";
+}
+@media only screen and (min-width: $bp-desktop) {
+  @import "partials/desktop";
+}
