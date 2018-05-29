@@ -4,8 +4,8 @@
     </div>
 
     <ul >
-        <li><a href="index.html">home</a></li>
-        <li><a href="#">voyages</a></li>
+        <li><a href="index.php">home</a></li>
+        <li><a href="pays.php">voyages</a></li>
         <li><a href="#">festival</a></li>
         <li><a href="#">communauté</a></li>
         <li><a href="#">about us</a></li>

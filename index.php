@@ -3,14 +3,30 @@ require_once 'lib/functions.php';
 require_once 'model/database.php';
 
 //Déclaration des variables
-$list_projects = getAllProjects();
+$list_pays = getAllEntity("pays");
 
 getHeader("Accueil");
 ?>
 
-<?php foreach ($list_projects as $project) : ?>
-    <?php include 'include/sejour_inc.php'; ?>
-<?php endforeach; ?>
+<section id="voyages">
+    <div class="accordion">
+        <ul>
+            <?php foreach ($list_pays as $pays) : ?>
+            <li style="background-image: url('uploads/<?php echo $pays["picture"]; ?>')">
+                <div>
+                    <article>
+                        <a href="#">
+                            <h2><?php echo $pays["title"]; ?></h2>
+                            <p><?php echo $pays["description"]; ?></p>
+                        </a>
+                        <a class="plus-voyages" href="pays.php"><img src="./images/plus-white.svg" alt="Plus d'infos"></a>
+                    </article>
+                </div>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</section>
 
 <!-- SECTION FESTIVAL -->
 <section id="festival-aztrek">
@@ -26,12 +42,12 @@ getHeader("Accueil");
         <div id="slider" class="owl-carousel">
             <div class="item container">
                 <div class="item-img">
-                    <img src="./images/Tomorrowland2018_C3_J9cVWmh.jpg" alt="Festival" />
+                    <img src="./uploads/Tomorrowland2018_C3_J9cVWmh.jpg" alt="Festival" />
                 </div>
             </div>
             <div class="item container">
                 <div class="item-img">
-                    <img src="./images/tomorrowland-2016-indian-girl.jpg" alt="Festival" />
+                    <img src="./uploads/tomorrowland-2016-indian-girl.jpg" alt="Festival" />
                 </div>
             </div>
         </div>

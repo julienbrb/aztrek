@@ -6,7 +6,7 @@
         <meta name="description" content="Thousands travelers, one community. Découvrez une nouvelle approche du voyage grâce à AZTREK et intégrez notre communauté !">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AZTREK | Thousands travelers, one community</title>
+        <title>AZTREK | <?php echo $title; ?> </title>
         <link rel="shortcut icon" href="favicon.ico">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">

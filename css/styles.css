@@ -332,6 +332,7 @@ nav ul {
 a:link, a:visited {
   color: #fff;
   text-decoration: none; }
+
 a:hover, afocus {
   text-decoration: underline; }
 
@@ -345,7 +346,7 @@ img {
 =================================*/
 #page-header {
   min-height: 100vh;
-  background: url("../images/bg-header.png") no-repeat center bottom;
+  background: url("../uploads/bg-header.png") no-repeat center bottom;
   background-size: cover; }
 
 #header-top {
@@ -532,21 +533,6 @@ img {
   top: 100px;
   font-size: 13.5px; }
 
-.accordion ul li:nth-child(1) {
-  background-image: url("../images/bg-mexique.jpg"); }
-
-.accordion ul li:nth-child(2) {
-  background-image: url("../images/bg-guatemala.jpg"); }
-
-.accordion ul li:nth-child(3) {
-  background-image: url("../images/bg-salvador.jpg"); }
-
-.accordion ul li:nth-child(4) {
-  background-image: url("../images/bg-honduras.jpg"); }
-
-.accordion ul li:nth-child(5) {
-  background-image: url("../images/bg-costa-rica.jpg"); }
-
 .accordion ul:hover li {
   width: 8%; }
 
@@ -564,7 +550,6 @@ img {
 @media screen and (max-width: 600px) {
   .accordion {
     height: auto; }
-
   .accordion ul li,
   .accordion ul li:hover,
   .accordion ul:hover li,
@@ -575,6 +560,7 @@ img {
     width: 100%;
     -webkit-transition: none;
     transition: none; } }
+
 .plus-voyages img {
   width: 30px;
   height: 30px;
@@ -707,10 +693,67 @@ footer {
     .mentions ul li a {
       margin: 10px; }
 
+.fa-star, .fa-star-o {
+  color: goldenrod;
+  text-shadow: 1px 1px #000; }
+
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  background-color: #95CE4B;
+  color: #fff; }
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px; }
+
+.action {
+  position: relative;
+  overflow: hidden;
+  height: 250px; }
+
+.action img {
+  height: 100%; }
+
+.action .overlay {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+  transition: 0.5s;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.75) 100%); }
+
+.action:hover .overlay {
+  bottom: 0; }
+
+.action .overlay .info {
+  padding: 0 10px; }
+
+.action .overlay .info h3 {
+  margin: 10px 0;
+  color: white; }
+
+.action .overlay .more-info {
+  background-color: #89BD46;
+  color: white;
+  font-size: 0.8em;
+  display: flex; }
+
+.action .overlay .more-info .action-info {
+  flex-grow: 1;
+  text-align: center;
+  line-height: 30px; }
+
+.action .overlay .more-info .action-info i.fa {
+  opacity: 0.5; }
+
 @media only screen and (min-width: 768px) {
   .accordion ul li div article {
     height: 450px; }
-
   #main-nav {
     display: block; }
     #main-nav ul {
@@ -727,26 +770,21 @@ footer {
           transition: 0.3s; }
       #main-nav ul li:hover a {
         color: #bababa; }
-
   a.backpack {
     margin-top: 30px; }
-
   .burger {
     display: none; }
-
   .close-btn {
     display: none; }
-
   #about {
     background: url("../images/bg-about-tablette.png") no-repeat center bottom;
     background-size: cover;
     text-align: center;
     margin-bottom: 0; } }
+
 @media only screen and (min-width: 992px) {
   #about {
     background: url("../images/bg-about-desktop.png") no-repeat center bottom;
     background-size: cover;
     text-align: center;
     margin-bottom: 0; } }
-
-/*# sourceMappingURL=styles.css.map */
