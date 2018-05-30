@@ -15,9 +15,10 @@ getHeader($pays["title"]);
 ?>
 
 <section class="container actions"> 
-        <?php foreach ($list_sejours as $sejour) : ?>
-            <?php include 'include/sejour_inc.php'; ?>
-        <?php endforeach; ?>
+    <?php foreach ($list_sejours as $sejour) : ?>
+        <?php include 'include/sejour_inc.php'; ?>
+    <?php endforeach; ?>
 </section>
 
-<?php getFooter();
+<?php
+getFooter();

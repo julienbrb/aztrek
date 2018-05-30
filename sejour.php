@@ -8,8 +8,7 @@ if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
 }
 
 $id = $_GET["id"];
-
-
+$sejour = getOneSejour($id);
 
 getHeader($sejour["title"]);
 ?>
