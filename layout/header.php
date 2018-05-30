@@ -25,7 +25,7 @@
 
                 <?php getMenu(); ?>
 
-                <a class="backpack" href="#"><img src="./images/backpack.svg" alt="sac a dos">mon sac a dos</a>
+                <a class="backpack" href="admin/index.php"><img src="./images/backpack.svg" alt="sac a dos">mon sac a dos</a>
             </div>
             <div id="logo-header">
                 <div class="logo">

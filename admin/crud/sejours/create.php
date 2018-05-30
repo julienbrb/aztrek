@@ -1,12 +1,11 @@
 <?php
 require_once '../../../model/database.php';
-
+// Récupérer la liste des catégories pour la liste déroulante
 $list_categories = getAllEntity("category");
-
 require_once '../../layout/header.php';
 ?>
 
-<h1>Nouveau projet</h1>
+<h1>Nouveau séjours</h1>
 
 <form action="create_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
@@ -26,12 +25,8 @@ require_once '../../layout/header.php';
         <input type="number" id="price" name="price" class="form-control">
     </div>
     <div class="form-group">
-        <label for="date_start">Date de début</label>
-        <input type="date" id="date_start" name="date_start" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="date_end">Date de fin</label>
-        <input type="date" id="group" name="group" class="form-control">
+        <label for="date_start">Date de départ</label>
+        <input type="date" id="date_depart" name="date_start" class="form-control">
     </div>
     <div class="form-group">
         <label for="category">Catégorie</label>

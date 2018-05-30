@@ -1,4 +1,7 @@
 <?php
+if (!isset($_SESSION)){
+    session_start();
+}
 
 /**
  * 
@@ -6,6 +9,7 @@
  * @param mixed $var La variable à afficher
  * @param bool $die Arrêter l'execution
  */
+
 function debug($var, bool $die = true) {
     echo "<pre>";
     print_r($var);
@@ -13,6 +17,13 @@ function debug($var, bool $die = true) {
     if ($die) {
         die;
     }
+}
+
+function currentUser(){
+    if (isset($_SESSION["id"])) {
+        return getOneUser($_SESSION["id"]);
+    }
+    return null;
 }
 
 function getHeader(string $title){

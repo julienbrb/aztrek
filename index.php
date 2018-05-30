@@ -19,7 +19,7 @@ getHeader("Accueil");
                             <h2><?php echo $pays["title"]; ?></h2>
                             <p><?php echo $pays["description"]; ?></p>
                         </a>
-                        <a class="plus-voyages" href="pays.php"><img src="./images/plus-white.svg" alt="Plus d'infos"></a>
+                        <a class="plus-voyages" href="onepays.php?id=<?php echo $pays["id"]; ?>"><img src="./images/plus-white.svg" alt="Plus d'infos"></a>
                     </article>
                 </div>
             </li>

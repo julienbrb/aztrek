@@ -2,6 +2,7 @@
 require_once '../../../model/database.php';
 
 $id = $_GET["id"];
+
 $member = getOneEntity("member", $id);
 
 require_once '../../layout/header.php';
@@ -25,6 +26,7 @@ require_once '../../layout/header.php';
             <img src="../../../uploads/<?php echo $member["picture"]; ?>" class="img-thumbnail">
         <?php endif; ?>
     </div>
+    <input type="hidden" name="id" value="<?php echo $member["id"]; ?>">
     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
 </form>
 
