@@ -3,7 +3,7 @@ require_once '../../../model/database.php';
 
 $id = $_GET["id"];
 
-$member = getOneEntity("member", $id);
+$sejour = getOneSejour("sejour", $id);
 
 require_once '../../layout/header.php';
 ?>

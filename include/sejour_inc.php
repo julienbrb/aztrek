@@ -4,7 +4,9 @@
         <img src="uploads/<?php echo $sejour["picture"]; ?>" alt="<?php echo $sejour["title"]; ?>">
         <footer class="overlay">
             <div class="info">
-                <div class="tag"><?php echo $sejour["price"]; ?> €</div>
+                <div class="tag">A partir de : <?php echo $sejour["price"]; ?> €</div>
+                <br>
+                <br>
                 <?php if (is_numeric($sejour["grade"])) : ?>
                     <?php for ($i = 0; $i < 5; $i++) : ?>
                         <?php if ($sejour["grade"] > $i) : ?>

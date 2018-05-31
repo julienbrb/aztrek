@@ -1,7 +1,7 @@
 <?php
 require_once '../../../model/database.php';
 // Récupérer la liste des catégories pour la liste déroulante
-$list_categories = getAllEntity("category");
+
 require_once '../../layout/header.php';
 ?>
 

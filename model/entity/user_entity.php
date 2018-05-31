@@ -1,6 +1,5 @@
 <?php
 
-
 function getAllUsers() {
     /* @var $connection PDO */
     global $connection;
