@@ -5,17 +5,11 @@ function getAllSejours(int $limit = 999) {
     global $connection;
     
     $query = "SELECT
-                sejour.id,
-                sejour.title,
-                sejour.picture,
-                sejour.duree,
-                DATE_FORMAT(depart.date_depart, '%d-%m-%Y') AS date_depart,
-                AVG(notation.grade) AS grade
+                sejour.*,
+                pays.title AS pays
             FROM sejour
-            LEFT JOIN depart ON depart.sejour_id = sejour.id
-            LEFT JOIN reservation ON reservation.depart_id = depart.id
-            LEFT JOIN notation on notation.sejour_id = sejour.id
-            LIMIT 3;";
+            INNER JOIN pays ON pays.id = sejour.pays_id
+            LIMIT :limit;";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":limit", $limit, PDO::PARAM_INT);
@@ -66,20 +60,40 @@ function getAllSejoursByPays(int $id) {
     return $stmt->fetchAll();
 }
 
-function insertSejour(string $title, string $picture, string $description, float $price, string $date_start, int $category_id) {
+function insertSejour(string $title, int $pays, string $picture, string $description) {
         /* @var $connection PDO */
     global $connection;
 
-    $query = "INSERT INTO sejour (title, picture, description, price, date_start, date_end, category_id)
-                VALUES (:title, :picture, :description, :price, :date_start, :date_end, :category_id);";
+    $query = "INSERT INTO sejour (title, picture, pays_id, description)
+                VALUES (:title, :picture, :pays, :description);";
 
     $stmt = $connection->prepare($query);
     $stmt->bindParam(":title", $title);
     $stmt->bindParam(":picture", $picture);
+    $stmt->bindParam(":pays", $pays);
+    $stmt->bindParam(":description", $description);
+    $stmt->execute();
+}
+
+function updateSejour(string $title, int $pays, string $picture, string $description) {
+        /* @var $connection PDO */
+    global $connection;
+
+    $query = "UPDATE sejour
+                SET title = :title,
+                pays = :pays,
+                picture = :picture,
+                description = :description,
+                price = :price,
+                date_depart = :date_depart,
+            WHERE id = :id;";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":title", $title);
+    $stmt->bindParam(":pays", $pays);
+    $stmt->bindParam(":picture", $picture);
     $stmt->bindParam(":description", $description);
     $stmt->bindParam(":price", $price);
-    $stmt->bindParam(":date_start", $date_start);
-    $stmt->bindParam(":date_end", $date_end);
-    $stmt->bindParam(":category_id", $category_id);
+    $stmt->bindParam(":date_depart", $date_depart);
     $stmt->execute();
 }

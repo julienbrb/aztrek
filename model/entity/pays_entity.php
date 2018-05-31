@@ -44,3 +44,22 @@ function insertPays(string $title, string $picture, string $description) {
     $stmt->bindParam(":description", $description);
     $stmt->execute();
 }
+
+function updatePays(int $id, string $title, string $picture, string $description) {
+        /* @var $connection PDO */
+    global $connection;
+
+    $query = "UPDATE pays
+              SET title = :title,
+              picture = :picture,
+              description = :description
+              WHERE id = :id;";
+
+    $stmt = $connection->prepare($query);
+    $stmt->bindParam(":id", $id);
+    $stmt->bindParam(":title", $title);
+    $stmt->bindParam(":picture", $picture);
+    $stmt->bindParam(":description", $description);
+    $stmt->execute();
+}
+

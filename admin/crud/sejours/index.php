@@ -17,7 +17,8 @@ require_once '../../layout/header.php';
         <tr>
             <th>Séjour</th>
             <th>Pays</th>
-            <th>Date de départ</th>
+            <th>Description</th>
+            <th>Duree</th>
             <th>Photo</th>
             <th>Actions</th>
         </tr>
@@ -27,7 +28,8 @@ require_once '../../layout/header.php';
             <tr>
                 <td><?php echo $sejour["title"]; ?></td>
                 <td><?php echo $sejour["pays"]; ?></td>
-                <td><?php echo $sejour["date_depart"]; ?></td>
+                <td><?php echo $sejour["description"]; ?></td>
+                <td><?php echo $sejour["duree"]; ?></td>
                 <?php $picture = (!empty($sejour["picture"])) ? "../../../uploads/" . $sejour["picture"] : "http://via.placeholder.com/150x150"; ?>
                 <td><img src="<?php echo $picture; ?>" class="img-thumbnail"></td>
                 <td>

@@ -33,13 +33,9 @@ require_once '../../layout/header.php';
         <textarea name="description" id="description" class="form-control"></textarea>
     </div>
     <div class="form-group">
-        <label for="price">Prix</label>
-        <input type="number" id="price" name="price" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="date_start">Date de départ</label>
-        <input type="date" id="date_depart" name="date_start" class="form-control">
-    </div>
+        <label for="duree">Durée</label>
+        <input type="text" id="duree" name="duree" value="<?php echo $sejour["duree"]; ?>" class="form-control">
+    </div>  
     <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Enregistrer</button>
 </form>
 
