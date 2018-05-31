@@ -9,26 +9,30 @@ header("Location: 404.php");
 
 $id = $_GET["id"];
 $sejour = getOneSejour($id);
-$list_sejour = getAllSejours();
-$list_users = getAllUsersBySejour();
-$list_pictures = getAllPicturesBySejour();
+$list_users = getAllUsersBySejour($id);
+$list_pictures = getAllPicturesBySejour($id);
 
-getHeader($project["title"]);
+getHeader($sejour["title"]);
 ?>
 
 <section class="container">  
     
-    <h1> <?php echo $sejour["title"]; ?> </h1>
-    <p> Date de départ : </p> <?php echo $sejour["date_depart_format"]; ?>
+    <h2><?php echo $sejour["title"]; ?></h2> 
+    
+    <h2> Date de départ : <?php echo $sejour["date_depart"]; ?></h2> 
+    
+    <h2>Durée du séjour : <?php echo $sejour["duree"]; ?> jours</h2>
 
     <img src="uploads/<?php echo $sejour["picture"]; ?>">
+    
+    <h2>Description : </h2>
     <p><?php echo $sejour["description"]; ?></p>
     
-    <h2>Membres ayant participés au projet</h2>
-    <?php foreach ($list_members as $member) : ?>
+    <h2>Voyageurs participants au séjour : </h2>
+    <?php foreach ($list_users as $user) : ?>
         <article>
-            <h3> <?php echo $member["fullname"]; ?> </h3>
-            <img src="uploads/<?php echo $member["picture"]; ?>">
+            <h3> <?php echo $user["fullname"]; ?> </h3>
+            <img src="uploads/<?php echo $user["picture"]; ?>">
         </article>
     <?php endforeach; ?>
      

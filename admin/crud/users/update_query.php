@@ -8,9 +8,9 @@ $firstname = $_POST["firstname"];
 
 $lastname = $_POST["lastname"];
 
-$member = getOneEntity("member", $id);
+$user = getOneEntity("user", $id);
 
-$picture = !is_null($member["picture"]) ? $member["picture"] : ""; // Image présente avant update
+$picture = !is_null($user["picture"]) ? $user["picture"] : ""; // Image présente avant update
 
 // Vérifier si l'utilisateur a uploadé un fichier
 if ($_FILES["picture"]["error"] == 0) {
@@ -19,7 +19,7 @@ if ($_FILES["picture"]["error"] == 0) {
     move_uploaded_file($_FILES["picture"]["tmp_name"], "../../../uploads/" . $picture);
 }
 // Insertion des données en BDD
-updateMember($id, $firstname, $lastname, $picture);
+updateUser($id, $firstname, $lastname, $picture);
 
 // Redirection vers la liste
 header("Location: index.php");

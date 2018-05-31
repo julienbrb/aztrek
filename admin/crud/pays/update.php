@@ -3,12 +3,12 @@ require_once '../../../model/database.php';
 
 $id = $_GET["id"];
 
-$sejour = getOneSejour("sejour", $id);
+$pays = getOnePays("pays", $id);
 
 require_once '../../layout/header.php';
 ?>
 
-<h1>Modifier séjour</h1>
+<h1>Modifier membre</h1>
 
 <form action="update_query.php" method="post" enctype="multipart/form-data">
     <div class="form-group">

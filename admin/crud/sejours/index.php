@@ -6,7 +6,7 @@ $list_sejours = getAllSejours();
 require_once '../../layout/header.php';
 ?>
 
-<h1>Gestion des projets</h1>
+<h1>Gestion des séjours</h1>
 
 <a href="create.php" class="btn btn-primary"><i class="fa fa-plus"></i> Ajouter</a>
 
@@ -16,9 +16,9 @@ require_once '../../layout/header.php';
     <thead class="thead-dark">
         <tr>
             <th>Séjour</th>
+            <th>Pays</th>
             <th>Date de départ</th>
             <th>Photo</th>
-<!--            <th>Categorie</th>-->
             <th>Actions</th>
         </tr>
     </thead>
@@ -26,6 +26,7 @@ require_once '../../layout/header.php';
         <?php foreach ($list_sejours as $sejour) : ?>
             <tr>
                 <td><?php echo $sejour["title"]; ?></td>
+                <td><?php echo $sejour["pays"]; ?></td>
                 <td><?php echo $sejour["date_depart"]; ?></td>
                 <?php $picture = (!empty($sejour["picture"])) ? "../../../uploads/" . $sejour["picture"] : "http://via.placeholder.com/150x150"; ?>
                 <td><img src="<?php echo $picture; ?>" class="img-thumbnail"></td>

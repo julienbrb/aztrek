@@ -20,11 +20,13 @@
             </div>
             <div class="more-info">
                 <div class="action-info">
+                    Départ : 
                     <i class="fa fa-calendar"></i>
                     <?php echo $sejour["date_depart"]; ?>
                 </div>
 
                 <div class="action-info">
+                    Nombres de places : 
                     <i class="fa fa-users"></i>
                     <?php echo $sejour["nb_places"]; ?>
                 </div>

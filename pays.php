@@ -2,25 +2,20 @@
 require_once 'lib/functions.php';
 require_once 'model/database.php';
 
-//Vérifier si le paramètre id est présent dans l'URL.
-if (!isset($_GET["id"]) || !is_numeric($_GET["id"])) {
-    header("Location: 404.php");
-}
-
 //Déclaration des variables
-$list_pays = getAllEntity("pays");
+$list_pays = getAllPays();
 
-getHeader("Pays");
+getHeader("Liste des pays");
 ?>
 
-<section id="voyages">
-    <div class="accordion">
+<section>
+    <div class="accordion2">
         <ul>
             <?php foreach ($list_pays as $pays) : ?>
             <li style="background-image: url('uploads/<?php echo $pays["picture"]; ?>')">
                 <div>
                     <article>
-                        <a href="#">
+                        <a href="onepays.php?id=<?php echo $pays["id"]; ?>">
                             <h2><?php echo $pays["title"]; ?></h2>
                             <p><?php echo $pays["description"]; ?></p>
                         </a>

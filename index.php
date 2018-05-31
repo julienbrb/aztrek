@@ -3,7 +3,7 @@ require_once 'lib/functions.php';
 require_once 'model/database.php';
 
 //Déclaration des variables
-$list_pays = getAllEntity("pays");
+$list_pays = getAllPays(8);
 
 getHeader("Accueil");
 ?>
@@ -12,17 +12,30 @@ getHeader("Accueil");
     <div class="accordion">
         <ul>
             <?php foreach ($list_pays as $pays) : ?>
-            <li style="background-image: url('uploads/<?php echo $pays["picture"]; ?>')">
-                <div>
-                    <article>
-                        <a href="#">
-                            <h2><?php echo $pays["title"]; ?></h2>
-                            <p><?php echo $pays["description"]; ?></p>
-                        </a>
-                        <a class="plus-voyages" href="onepays.php?id=<?php echo $pays["id"]; ?>"><img src="./images/plus-white.svg" alt="Plus d'infos"></a>
-                    </article>
-                </div>
-            </li>
+
+                <li style="background-image: url('uploads/<?php echo $pays["picture"]; ?>')">
+                    <div>
+                        <article>
+                            <a href="onepays.php?id=<?php echo $pays["id"]; ?>">
+                                <h2><?php echo $pays["title"]; ?></h2>
+                                <p><?php echo $pays["description"]; ?></p>
+                            </a>
+
+                            <?php $list_sejours = getAllSejoursByPays($pays["id"]); ?>
+                            <?php foreach ($list_sejours as $sejour): ?>
+                                <div> 
+                                    <a class="" href="sejour.php?id=<?php echo $sejour["id"]; ?>">
+                                        <?php echo $sejour["title"]; ?>
+                                    </a>
+                                </div>
+                            <?php endforeach; ?>
+
+
+                            <a class="plus-voyages" href="onepays.php?id=<?php echo $pays["id"]; ?>"><img src="./images/plus-white.svg" alt="Plus d'infos"></a>
+                        </article>
+                    </div>
+                </li>
+
             <?php endforeach; ?>
         </ul>
     </div>
@@ -74,4 +87,5 @@ getHeader("Accueil");
     </article>
 </section>
 
-<?php getFooter();
+<?php
+getFooter();

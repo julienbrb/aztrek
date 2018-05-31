@@ -6,6 +6,12 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo ADMIN_URL; ?>crud/pays/">
+            <i class="fa fa-briefcase"></i>
+            Pays
+        </a>
+    </li>    
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo ADMIN_URL; ?>crud/users/">
             <i class="fa fa-users"></i>
             Membres
